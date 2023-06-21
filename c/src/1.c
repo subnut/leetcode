@@ -1,12 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-
-#if DEBUG
-#define dprintf printf
-#else
-#define dprintf(...) {;}
-#endif
-
 /*
  * NOTE: The returned array must be malloced, assume caller calls free().
  */
@@ -32,12 +23,4 @@ found:
 	buf[0] = slow - nums;
 	buf[1] = fast - nums;
 	return buf;
-}
-
-int main(void) {
-	int nums[] = {3,2,4};
-	int retsize;
-	int*ret = twoSum(nums, 3, 6, &retsize);
-	printf("[%i, %i]\n",ret[0],ret[1]);
-	free(ret);
 }

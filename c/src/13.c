@@ -1,15 +1,3 @@
-#include <stdio.h>
-
-#ifndef DEBUG
-#define DEBUG 0
-#endif
-
-#if DEBUG
-#define DPRINTF printf
-#else
-#define DPRINTF(...) {;}
-#endif
-
 int char2int(const char c) {
     switch (c) {
         case 'I': return 1;
@@ -42,14 +30,4 @@ int romanToInt(const char *s) {
 
     DPRINTF("\n");
     return result;
-}
-
-int main(void) {
-    const char *str[] = {
-        "III",
-        "LVIII",
-        "MCMXCIV"
-    };
-    for (int i = 0; i < 3; i++)
-        printf("%d\t%s\n", romanToInt(str[i]), str[i]);
 }
